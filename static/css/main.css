@@ -1,0 +1,118 @@
+.cont-top{
+	min-width:1000px;
+	height:350px;
+	overflow:hidden;
+	position:relative; }
+
+.cont-top .slide ul{
+	left:0;
+	position:absolute;
+	width:200%; }
+
+.cont-top .slide li{
+	float:left;
+	width:50%;
+	text-align:center;
+	height:350px; }
+
+.cont-top .slide li:nth-of-type(1){
+	background:url('/static/img/slide1.png') 50% 50%; }
+
+.cont-top .slide li:nth-of-type(2){
+	background:url('/static/img/slide2.png') 50% 50%; }
+	
+.cont-top ul li h3{
+	margin-top:100px;
+	padding:0 10px;
+	display:inline-block;
+	font-size:2.7em;
+	background:#000;
+	opacity:0.7;
+	color:#fff; }
+	
+.cont-top ul li h4{
+	padding:20px 0;
+	color:#fff;
+	font-weight:normal; }
+	
+.cont-top ul li a{
+	display:inline-block;
+	padding:10px 40px;
+	background:#ab223b;
+	color:#fff;
+	font-size:0.85em; }
+	
+.cont-top ul li a:hover{
+	background:none;
+	border:1px solid #fff;
+	color:#fff; }
+
+.cont-top .slide_btn{
+	width:1000px;
+	margin:0 auto;
+	text-align:center; }
+
+.cont-top .slide_btn div{
+	position:relative;
+	z-index:10;
+	bottom:-320px;}
+
+.cont-top .slide_btn a{
+	display:inline-block;
+	width:40px;
+	height:10px;
+	margin:10px;
+	background:#000;
+	opacity:0.8; }
+	
+.cont-top .slide_btn a.active{
+	background:#fff; }
+
+.cont-center{
+	min-width:1000px;
+	background:#22ab92; }
+
+.cont-center > div{
+	padding:20px 0;
+	text-align:center;
+	width:1000px;
+	font-family:'malgun gothic';
+	margin:0 auto; }
+
+.cont-center h2{
+	display:inline-block;
+	padding:5px 10px;
+	border-bottom:1px solid #e2e2e2;
+	margin-bottom:10px; }
+
+.cont-center p{
+	padding:3px 0;
+	font-size:0.75em; }
+
+.cont-center a{
+	display:inline-block;
+	padding:10px 40px;
+	background:#03816a;
+	font-size:0.75em; 
+	margin-top:15px; }
+
+.cont-center > div > *{
+	color:#fff;
+	text-align:center; }
+
+.cont-bottom h3{
+	min-width:1000px;
+	background:url('/static/img/cont_bottom_title.png') 50% 50%;
+	height:80px; }
+
+.cont-bottom ul{
+	width:1000px;
+	margin:0 auto; }
+
+.cont-bottom ul li{
+	float:left;
+	border:1px solid #ddd;
+	margin-right:3px; }
+	
+.cont-bottom ul li img{
+	width:245px; }

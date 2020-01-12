@@ -1,0 +1,245 @@
+$(function(){
+
+/*menu animation*/
+if($('header > nav > ul').length > 0 ){
+	$('nav > ul > li').mouseenter(function(){
+		var nowOn	= $(this).attr('class') == 'onMenu',
+			notHave	= $('> ul',this).length == 0;
+
+		if(nowOn||notHave) return false;
+		if($('.onMenu')){
+			var $target = $('.menuOn');
+			$target.removeClass();
+		}
+		$('> ul',this).attr('class','menuOn');
+	});
+}
+
+/*font size*/
+
+if($('.font input[type=button]').length > 0 ){
+	var font = 0.8;
+	$('.font input[type=button]').click(function(){
+		var type = $(this).data('val');
+		font += Number(type);
+		if(font <= 0.5){
+			alert('더이상 줄일 수 없습니다.');
+			return false;
+		}else if(font>= 1.5){
+			alert('더이상 늘릴 수 없습니다.');
+			return false;
+		}
+		$('.content').css('fontSize',font+'em');
+	});
+}
+
+/* page location */
+if($('[data-location]').length > 0 ){
+	$('[data-location]').click(function(){
+		if(!$('[data-location]')) return false;
+		var url = $(this).data('location');
+		location.href=url;
+	});
+}
+
+/*main page POM calendar*/
+if($('.contRight').length > 0 ){
+	$('.contRight input[type=text]').datepicker();
+}
+
+/*move scoll top*/
+if($('.moveTop').length > 0 ){
+	$('.moveTop').click(function(){
+		var body = $("html, body");
+		body.animate({scrollTop:0}, '500');
+	});
+}
+
+/*reserve page javascript */
+
+if($('.reserve').length > 0 &&$('.reserCar').length > 0 ){
+
+	/*drag function*/
+	$('.reserCar figure img').draggable({
+		revert:true
+	});
+	$('.carBox').droppable({
+      hoverClass: "ui-state-hover",
+		accept:function(){
+		  if($('.carBox img').length > 0){
+			return false;
+		  }else{
+			return true;
+		  }
+	    },
+		drop:function(event,ui){
+			var target = ui.draggable,
+				$self  = $(this);
+
+			target.css('opacity',0);
+			target.addClass('acticeImg');
+
+			var src = target.attr('src'),
+				num = target.data('num'),
+				carNum = target.attr('data-carNum');
+			$(this).css('padding','50px 0');
+			$(this).html('<div><input type="reset" value="X"></div>');
+				/*reset function*/
+				$('.carBox input').click(function(){
+					$('.carBox').animate({'opacity':0},500,function(){
+						$('.reserveBox input').not(':button',':submit',':reset').val('');
+						$('.reserveBox select').find('option:first').attr('selected','selected');
+						$('.acticeImg').css('opacity',1);
+						$self.html('드래그 해주세요.');
+						$self.css({ 'opacity':1,'padding':'150px 0' });
+						$('.target').remove();
+					});
+				});
+
+			$(this).addClass('avtive');
+			$('.num').val(num);
+			$('.src').val(src);
+			$('.carNum').val(carNum);
+			$(this).append('<img src="'+src+'" title="Target Car" class="target" alt="Target Car" data-num="'+num+'"/>');
+		}
+	});
+
+	/*ajax button javascript*/
+	$('.chkView').click(function(){
+		
+		var where = $('.carBox img').length == 0 ||
+					$('.start').val() == ''||
+					$('.end').val()	  == '';
+
+		if(where){
+			alert('자동차를 드래그 해주세요.');
+			return false;
+		}
+		$.ajax({
+			url:'/action/reserve/chk',
+			data:{	'start'  : $('.startVal').val(),
+					'end'	 : $('.endVal').val(),
+					'fuel'	 : $('#fuel').val(),
+					'color'	 : $('#color').val(),
+					'num'	 : $('.num').val(),
+					'carNum' : $('.carNum').val(),
+					'src'	 : $('.src').val()
+				},
+
+			type:'POST',
+			success: function(data){
+				console.log($('.carNum').val());
+				console.log(data);
+				if(data == '1'){
+					$('.okText').html('사용할수 없습니다.');
+					$('.okText').css('color','red');
+					$('.submitBtn').remove();
+				}else{
+					$('.okText').html('사용 가능합니다.');
+					$('.okText').css({'color':'#0abd0f',"padding-top":'5px'});
+					text = $('.reserveBox').html();
+					if($('.reserveBox input[type=submit]').length > 0) return false;
+					$('.reserveBox').append('<dl class="submitBtn"><dd><input type="submit" value="예약하기"></input></dd></dl>');
+				}
+			}
+		});
+	});
+
+	/*start day end day*/
+	$('.start').datepicker({
+		minDate	:0,
+		dateFormat:'yy-mm-dd',
+		onClose	:function(selectDate){
+			if(selectDate == '') return false;
+			$('.startVal').val(selectDate);
+			$('.end').datepicker({
+				maxDate:'1m',
+				minDate:0,
+				dateFormat:'yy-mm-dd',
+				onClose:function(endDate){
+					$('.endVal').val(endDate);
+				}
+			})
+			$('.end').datepicker("option","minDate",selectDate);
+			$('.end').datepicker("show");
+		}
+	});
+
+}
+/*reserve page javascript end*/
+
+
+
+/*reserve list page*/
+
+if($('.list').length > 0 ){
+	$('.returnCar').click(function(){
+		$.post('/action/reserve/returnCar',{'idx':$(this).data('idx')},function(data){
+			$('tbody').html(data);
+		});
+	});
+}
+/*search page*/
+if($('.searchPage').length > 0){
+	$(window).scroll(function(){
+		if($(window).scrollTop() == $(document).height()-$(window).height()){
+			$.post('/action/search/listAdd',{ 'data':null },function(data){
+				$('.searchPage table tbody').html(data);
+			});
+		}
+	});
+
+	$('.key').keyup(function(){
+		$.post('/action/search/searchKey',{'key':$(this).val()},function(data){
+			console.log(data);
+			$('.searchPage table tbody').html(data);
+		});
+	});
+}
+/*slide animation*/
+
+if($('.contRight').length > 0){
+
+	/*setting*/
+
+	var setting = {
+		move : $('.animation li'),
+		slide:0,
+		ani	 : false
+	};
+	
+	function move(s){
+		var now		= $(s.move[s.slide]),
+			nextNum = (s.slide >=2)? 0 : s.slide+1,
+			next	= $(s.move[nextNum]);
+
+		(s.slide >= 2)? s.slide = 0 : s.slide ++;
+
+			now.css({'left':-100+'%','z-index':-2,'transition':'left 2s'});
+			next.css({'left':0+'%','z-index':-1,'transition':'left 2s'});
+			s.ani = $(window).width()+'px' == next.css('left');
+
+		s.moveTimer = setTimeout(function(){
+							move(setting);
+							now.css({'left':100+'%','z-index':-3,'transition':'right 3s'});
+						},3000);
+	}
+
+	setTimeout(function(){ move(setting) },3000);
+
+		console.log(setting.ani);
+	$('.slideBtn span').click(function(){
+	
+		if(!setting.ani) return false;
+		clearTimeout(setting.moveTimer);
+		setting.slide = Number($(this).data('slide')-2);
+		move(setting);
+	});
+}
+
+
+
+})/*javascript end*/
+
+
+

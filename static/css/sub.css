@@ -1,0 +1,274 @@
+/*sub css*/
+#body{
+	min-height:800px; }
+
+.cont-top{
+	height:200px;
+	min-width:1000px;
+	background:url('/static/img/sub_img.png')50% 50%; }
+
+.content{
+	width:1000px;
+	margin:0 auto; }
+	
+ .cont-right > div{
+	vertical-align:top;
+	display:inline-block; }
+	
+.content > .side-menu{
+	float:left;
+	width:150px;
+	min-height:500px;}
+	
+.content > .side-menu h3{
+	background:#f38f3f;
+	color:#fff;
+	text-align:center;
+	border-radius:80px;
+	margin-top:30px;
+	padding:60px 0; }
+	
+.content > .side-menu ul li{
+	font-size:0.85em;
+	font-family:'malgun gothic';
+	border-bottom:1px solid #ccc;
+	text-align:center; }
+	
+.content > .side-menu ul li.on,
+.content > .side-menu ul li:hover{
+	background:#e2e2e2; }
+	
+.content > .side-menu ul li a{
+	padding:10px 0; 
+	display:block; }
+
+.content > .cont-right{
+	float:right;
+	width:820px; }
+
+.content > .cont-right > .sub-nav{
+	border-bottom:1px solid #444;
+	height:63px; }
+	
+.content > .cont-right > .sub-nav h4{
+	position:relative;
+	bottom:10px;
+	padding-left:20px;
+	font-size:1.2em;
+	display:inline-block; }
+	
+.content > .cont-right > .sub-nav ul{
+	padding-top:40px;
+	font-size:0.75em;
+	width:695px; }
+
+.content > .cont-right > .sub-nav ul,
+.content > .cont-right > .sub-nav ul li{
+	display:inline-block;
+	text-align:right; } 
+
+.content > .cont-right > .sub-nav ul li a{
+	font-family:'돋움'; }
+	
+.content > .cont-right > .now-content{
+	width:812px; }
+
+.find{
+	text-align:center; }
+
+.find h4{
+	padding:10px 0;
+	font-size:1em;
+	color:#444;
+	text-align:center;
+	background:#e2e2e2;}
+	
+.find p{
+	display:inline-block;
+	font-size:0.75em;
+	padding:10px; }
+
+.guide{
+	padding-bottom:100px;
+}
+.guide h4{
+	padding:10px 0;
+	color:#444; }
+
+.guide ol li{
+	padding:2px 0;
+	font-size:0.85em;
+	margin-left:40px; }
+
+.guide p{
+	font-size:0.75em;
+	padding:5px 0; }
+	
+.car ul{
+	clear:both; }
+
+.car ul li img{
+	width:315px;
+	height:190px; }
+
+.car ul li div{
+	width:490px;
+	display:inline-block;
+	vertical-align:top; }
+
+.car ul li div p{
+	font-size:0.75em;
+	padding:4px 0; }
+
+.car ul li{
+	border-bottom:1px solid #ccc;
+	padding:20px 0; }
+
+.car ul .left div p,
+.car ul .left div h4{
+	text-align:left; }
+	
+.car ul .right div p,
+.car ul .right div h4{
+	text-align:right; }
+
+.car input{
+	display:none; }
+
+.car .menu{
+	display:none; }
+
+.car .menu a{
+	float:left;
+	width:240px;
+	padding:10px 0;
+	text-align:center;
+	display:inline-block;
+	background:#444;
+	color:#fff; }
+
+.reserve{
+	padding-top:30px;
+}
+.reserve img{
+	width:200px;}
+	
+.reserve .product{
+	display:inline-block;
+	width:450px; }
+	
+.reserve .product div{
+	margin-bottom:5px;
+	background:#fff;
+	border:1px solid #ccc;
+	padding:10px;
+	display:inline-block; 
+	vertical-align:top; }
+	
+.reserve .product div p{
+	text-align:center; 
+	font-size:0.75em; }
+
+.reserve .drop-box{
+	width:350px;
+	display:inline-block;
+	height:400px;
+	vertical-align:top; }
+
+
+.reserve .drop-box .drop-car.in{
+	padding:30px;
+	background:#fff;
+	border:1px solid #ccc; }
+	
+.reserve .drop-box .drop-car.off{
+	padding:100px;
+	background:#fff;
+	border:1px solid #ccc;
+	font-size:0.75em; }
+	
+.reserve .drop-box form{
+	opacity:0; }
+
+.reserve .drop-box form dl{
+	border-bottom:1px solid #ccc;
+	padding:10px 0;
+	font-size:0.75em; }
+
+.reserve .drop-box form dl > dt{
+	float:left;
+	width:100px; }
+	
+.reserve .drop-box form input[type=submit]{
+	border:none;
+	width:100%;
+	background:#ba2323;
+	color:#fff;
+	font-weight:bold;
+	padding:10px 0;
+	display:none; }
+	
+.reserve .drop-car{
+	text-align:center;
+	font-size:0.85em; }
+
+.reserve .drop-box form input[type=button]{
+	width:100%;
+	background:#e2e2e2;
+	color:#999;
+	margin-top:10px;
+	font-weight:bold;
+	border:1px solid #ccc;
+	padding:10px 0; }
+
+.list{
+	padding-top:20px; }
+
+.list table caption{
+	padding:15px 0;
+	font-weight:bold;
+	font-family:'malgun gothic';
+	background:#eee;
+	color:#666;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc; }
+
+
+.list table thead th{
+	padding:5px 0;
+	background:#444;
+	color:#fff; }
+
+
+.list table tbody td{
+	width:20%;
+	text-align:center;
+	font-size:0.75em;
+	height:40px;
+	border-bottom:1px solid #ccc; }
+
+.search{
+	padding-top:20px; }
+	
+.search .search-box{
+	text-align:center;
+	padding-bottom:20px; }
+	
+.search .search-box input{
+	width:50%;
+	padding:5px 0;
+	border:5px solid #ba2323; }
+	
+.search table{
+	border-top:1px solid #ccc; }
+	
+.search table th{
+	color:#fff;
+	padding:5px 0;
+	background:#444; }
+	
+.search table td{
+	padding:5px 0;
+	text-align:center;
+	font-size:0.75em;
+	border-bottom:1px solid #ccc; }

@@ -1,0 +1,94 @@
+/*base setting*/
+*{ margin:0; padding:0; font-family:'malgun gothic'; }
+a img{ border:none; }
+table{ width:100%; border-spacing:0; border-collapse:collapse; }
+ul li{ list-style:none; }
+a{ color:#444; text-decoration:none; }
+
+/*header css*/
+.header-top{
+	min-width:1000px;
+	background:#404040; }
+	
+.header-top ul{
+	width:1000px;
+	margin:0 auto;
+	text-align:right; }
+	
+.header-top ul > li{
+	color:#fff;
+	display:inline-block;
+	font-size:0.75em; 
+	padding:5px 20px;
+	background:#000; }
+	
+.header-top ul > li a{
+	color:#fff;}
+
+.header-bottom{
+	width:1000px;
+	margin:0 auto; }
+	
+.header-bottom > *{
+	display:inline-block; }
+	
+.header-bottom ul{
+	border-right:1px solid #ccc;
+	text-align:right;
+	width:800px;
+	float:right; }
+	
+.header-bottom > ul > li{
+	font-size:0.8em;
+	border-left:1px solid #ccc;
+	padding:19px 30px;
+	display:inline-block; }
+	
+.header-bottom > ul li ul{
+	display:none; }
+
+.header-bottom > ul > li:hover{
+	background:#e2e2e2; }
+
+#footer{
+	clear:both;
+	min-width:1000px;
+	background:#444; }
+	
+#footer .footer{
+	width:1000px;
+	margin:0 auto;
+	font-size:0.75em;
+	padding:10px 0;
+	color:#fff; }
+
+.login-form{
+	padding:10px 0; }
+
+.login-form div{
+	padding:10px 0;
+	font-size:0.8em;
+	display:block; }
+	
+.login-form div label{
+	display:inline-block;
+	width:50px; }
+	
+.login-form div input{
+	width:70%;
+	padding:4px 0;
+	border:1px solid #ccc; }
+
+.login-form input[type=submit]{
+	width:100%;
+	padding:10px 0;
+	font-size:0.75em;
+	background:#ba2323;
+	border:none;
+	color:#fff; }
+
+.ui-dialog-titlebar{
+	font-size:0.85em;
+	border-radius:0;
+	background:#666;
+	border:1px solid #666; }

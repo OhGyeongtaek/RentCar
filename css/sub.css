@@ -1,0 +1,269 @@
+.contUp{
+	background:url('/img/main3.png')50% 50%;
+	height:300px;
+	min-width:1024px;
+	position:relative;}
+
+	.contUp .subMenu{
+		position:absolute;
+		bottom:0px;
+		width:100%;
+		background:url('/img/sub_menu.png');
+		opacity:0.8;
+		height:30px; }
+
+		 	.contUp .subMenu div{
+				width:1024px;
+				margin:0 auto;
+				color:#fff; }
+
+				.contUp .subMenu div dl{
+					display:flex;}
+
+					.contUp .subMenu div dl a{
+						color:#fff; }
+
+					.contUp .subMenu div dl dt{
+						background:url('/img/active.png'); }
+
+					.contUp .subMenu div dl dt,
+					.contUp .subMenu div dl dd{
+						padding:4.5px 10px; }
+
+					.contUp .subMenu div dl dt:hover,
+					.contUp .subMenu div dl dd:hover{
+						background:url('/img/active.png'); }
+/*content css start*/
+.content{
+	width:1024px;
+	margin:0 auto;}
+
+	/*now page nav*/
+	.content .nowPage{
+		border-bottom:1px solid #ccc;
+		height:30px;
+		padding-top:20px;}
+		
+		.content .nowPage li:nth-of-type(1){
+			float:left;
+			font-size:1.1em;}
+
+		.content .nowPage li:nth-of-type(2){
+			float:right;
+			font-size:0.8em;
+			padding-top:10px;}
+
+
+		/*way page*/
+		.content .way figure{
+			margin-bottom:30px;
+			width:100%;
+			text-align:center;}
+			
+			.content .way figure figcaption{
+				border:1px solid #ccc;
+				text-align:left;}
+
+				.content .way figure figcaption strong{
+					display:block;
+					width:100%;
+					margin-left:20px;
+					padding:10px 0; }
+
+				.content .way figure figcaption ul{
+					border-top:1px solid #940000;
+					font-size:0.75em; }
+
+					.content .way figure figcaption ul li{
+						padding:10px 0;
+						padding-left:20px;}
+
+			
+		/*guide car page*/
+
+		.car .carHeader{
+			display:none;}
+		.car figure{
+			padding:10px 0; }
+
+			.car figure > *:not(h3){
+				display:inline-block;
+				vertical-align:top;}
+
+
+				.car figure figcaption{
+					width:500px;
+					height:220px;
+					padding:15px;
+					border:1px solid #999;}
+
+					.car figure figcaption div{
+						width:480px;
+						height:180px;
+						font-size:0.75em;}
+
+						.car figure figcaption div strong{
+							font-size:1.3em;
+							display:block;
+							padding:10px 0;}
+
+						.car figure figcaption div p{
+							padding:5px 0;}
+
+
+		/*rent guide page css*/
+		.guide > div{
+			padding:10px 0;
+			font-size:0.85em;
+			color:#666;}
+
+			.guide > div:last-child{
+				padding-bottom:20px;}
+
+			.guide > div h3{
+				padding:10px 0; }
+
+			.guide > div h4{
+				padding-top:10px;}
+
+			.guide > div ul li{
+				padding-left:20px;
+				padding-top:5px;}
+			
+			.guide > .one img{
+				width:100%;
+				height:200px; }
+
+
+
+		/*reserve page css*/
+		.reserve{
+			width:1024px;
+			padding:20px 0;
+			display:flex;}
+
+			.reserve dl{
+				display:flex;}
+
+			.reserve .reserCar{
+				width:62%;}
+
+				.reserve .reserCar figure{
+					display:inline-block;
+					vertical-align:top;
+					font-size:0.75em;
+					padding-right:20px;
+					padding-bottom:20px; }
+
+					.reserve .reserCar figure img{
+						border:1px solid #ccc;
+						padding:20px; }
+
+					.reserve .reserCar figure div{
+						padding:10px 30px;
+						border:1px solid #ccc;
+						background:#fafafa;}
+						.reserve .reserCar figure div dl{
+							padding:5px 0;}
+
+							.reserve .reserCar figure div dl dt{
+								font-weight:bold; 
+								width:80px;}
+
+		/*car Box*/
+		.reserve .dropBox{
+			display:inline-block;
+			vertical-align:top;
+			font-size:0.85em;}
+
+			.reserve .carBox{
+				width:387px;
+				padding:150px 0;
+				text-align:center;
+				font-weight:bold;
+				font-size:1.5em;
+				border:1px solid #ccc;
+				position:relative;}
+
+				.reserve .carBox div{
+					width:100%;
+					height:51px;
+					opacity:0.8;
+					background:#000;
+					position:absolute;
+					text-align:right;
+					bottom:0;}
+
+					.reserve .carBox input{
+						border:none;
+						color:#fff;
+						font-weight:bold;
+						font-size:1.5em;
+						background:#000;
+						width:50px;
+						padding:5px;}
+
+			.reserve .dropBox dl{
+				padding:10px 0;
+				border-bottom:1px solid #666;
+				padding-left:7px;}
+			
+			.reserve .dropBox dl{
+				opacity:1;}
+
+				.reserve .dropBox dl dt{
+					padding-top:5px;
+					padding-left:5px;
+					font-weight:bold;
+					width:90px;}
+
+					.reserve .dropBox dl dd select{
+						width:270px;
+						padding:5px;}
+
+					.reserve .dropBox dl dd input[type=text]{
+						width:260px;
+						padding:5px; }
+
+					.reserve .dropBox dl dd input[type=button]{
+						padding:10px 145px;
+						color:#666;
+						font-weight:bold;
+						background:linear-gradient(#f1f1f1,#e2e2e2);
+						border:1px solid #ccc;}
+
+					.reserve .dropBox dl dd input[type=submit]{
+						padding:10px 145px;
+						background:#ba2323;
+						font-weight:bold;
+						border:1px solid #941d1d;
+						border:none;
+						width:370px;
+						color:#fff;}
+
+
+		/*reserve list page*/
+
+		.list table{
+			width:100%;
+			border-spacing:0; }
+			
+			.list table thead{
+				background:#eee5c8; }
+
+				.list table thead th{
+					padding:10px 0; 
+					color:#666;
+					font-size:0.85em;
+					border-bottom:2px solid #900000;}
+				
+				.list table tbody{
+					text-align:center;
+					font-size:0.75em;}
+
+
+		/*search page css*/
+
+		.searchPage{
+			min-height:500px;
+		}
